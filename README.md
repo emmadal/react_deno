@@ -1,8 +1,6 @@
 # React interface to interact with DENO REST API
 
-> This is a Frontend interface to interact with DENO REST API locate [here](https://github.com/emmadal/denomongo).
-
-**The API for this React CRUD application  App is hosted [here](https://github.com/emmadal/denomongo)**
+> React CRUD application  App is hosted [here](https://github.com/emmadal/denomongo)
 
 ## Get started
 
