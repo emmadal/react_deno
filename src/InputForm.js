@@ -31,7 +31,7 @@ export default function InputForm() {
 
   const getAllEmployees = async () => {
     try {
-      const employee = await axios.get("http://localhost:5000/employees");
+      const employee = await axios.get("http://3.131.20.56:5000/employees");
       setEmployee(employee.data);
       return;
     } catch (error) {
@@ -42,7 +42,7 @@ export default function InputForm() {
 
   const deleteEmployee = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/employee/${id}`);
+      await axios.delete(`http://3.131.20.56:5000/employee/${id}`);
       getAllEmployees();
       return;
     } catch (error) {
@@ -53,7 +53,7 @@ export default function InputForm() {
 
   const updateEmployee = async (id) => {
     try {
-      const employee = await axios.get(`http://localhost:5000/employee/${id}`);
+      const employee = await axios.get(`http://3.131.20.56:5000/employee/${id}`);
       if (employee) {
         setUser({ ...user, ...employee.data });
         return;
@@ -67,14 +67,14 @@ export default function InputForm() {
   const addEmployee = async () => {
     try {
       if (user._id) {
-        await axios.put(`http://localhost:5000/employee/${user._id.$oid}`, {
+        await axios.put(`http://3.131.20.56:5000/employee/${user._id.$oid}`, {
           ...user,
         });
         getAllEmployees();
         setUser({ name: "", email: "", job: "", age: "" });
         return;
       } else {
-        const data = await axios.post("http://localhost:5000/employee", {
+        const data = await axios.post("http://3.131.20.56:5000/employee", {
           ...user,
         });
         if (data) {
